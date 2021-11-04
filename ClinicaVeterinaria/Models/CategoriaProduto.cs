@@ -66,6 +66,19 @@ namespace ClinicaVeterinaria.Models
             return registrosAtivos;
         }
 
+        public static List<CategoriaProduto> BuscarTodosRegistroAtivos()
+        {
+            List<CategoriaProduto> registrosAtivos;
+
+            using (ClinicaContext context = new ClinicaContext())
+                registrosAtivos = context.CategoriaProdutos
+                                    .Where(e => e.Status == true)
+                                    .OrderBy(e => e.Descricao)
+                                    .ToList();
+
+            return registrosAtivos;
+        }
+
         public static CategoriaProduto BuscarPorId(int id)
         {
             CategoriaProduto CategoriaProduto;

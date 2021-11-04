@@ -171,7 +171,7 @@ namespace ClinicaVeterinaria.Controllers
 
         private void CarregarCategoriasProdutosDisponiveis()
         {
-            CategoriasProdutos = CategoriaProduto.BuscarRegistroAtivos();
+            CategoriasProdutos = CategoriaProduto.BuscarTodosRegistroAtivos();
             CategoriasProdutos.Insert(0, new CategoriaProduto() { Descricao = "Selecionar" });
         }
 
