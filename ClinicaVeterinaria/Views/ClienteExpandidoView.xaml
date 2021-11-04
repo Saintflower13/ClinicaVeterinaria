@@ -1,0 +1,74 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.ClienteExpandidoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1"
+                   Name="txtNome" Text="Nome Cliente" FontSize="16"/>
+
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Row="0" Grid.Column="0" Header="Dados do Cliente">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <DockPanel Grid.Row="0">
+                        <TextBlock Text="Dados Pessoais" DockPanel.Dock="Top" FontSize="12" Height="20" VerticalAlignment="Top"/>
+                        <StackPanel DockPanel.Dock="Top" Height="50" VerticalAlignment="Top">
+                            <TextBlock x:Name="txtCPF" Text="CPF: "/>
+                            <TextBlock Name="txtRG" Text="RG: "/>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <DockPanel Grid.Row="1">
+                        <TextBlock Text="Contatos" DockPanel.Dock="Top" FontSize="12" Height="20" VerticalAlignment="Top"/>
+                        <StackPanel DockPanel.Dock="Top" Height="50" VerticalAlignment="Top">
+                            <TextBlock Name="txtTelefone" Text="Telefone: "/>
+                            <TextBlock Name="txtEmail"  Text="Email: "/>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <DockPanel Grid.Row="2">
+                        <TextBlock Text="Endereço" DockPanel.Dock="Top" FontSize="12" Height="20" VerticalAlignment="Top"/>
+                        <StackPanel DockPanel.Dock="Top" Height="50" VerticalAlignment="Top">
+                            <TextBlock x:Name="txtEnderecoLinha1" />
+                            <TextBlock x:Name="txtEnderecoLinha2"/>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <Button Name="btnEditarCliente" Grid.Row="3" Content="Editar Cadastro" Click="btnEditarCliente_Click"/>
+                </Grid>
+            </GroupBox>
+            
+            <GroupBox Grid.Row="0" Grid.Column="1" Header="Animais">
+                <StackPanel Name="spnAnimais" Margin="10" Orientation="Vertical"/>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>

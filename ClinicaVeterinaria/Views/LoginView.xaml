@@ -1,0 +1,35 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="250" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <StackPanel Orientation="Vertical" Margin="0 0 0 10">
+                <TextBlock Text="Usuário"/>
+                <TextBox Height="30" Name="txbUsuario" FontSize="18"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Margin="0 0 0 10">
+                <TextBlock Text="Senha"/>
+                <PasswordBox Height="30" Name="txbSenha" FontSize="18" KeyDown="txbSenha_KeyDown"/>
+            </StackPanel>
+
+            <Button Content="Logar" Height="30" Name="btnLogar" Click="btnLogar_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,114 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.ServicoCadastroView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Adicionar Serviço" FontSize="16"/>
+
+        <WrapPanel Grid.Row="3" Grid.Column="1" >
+            <StackPanel Orientation="Vertical" Width="200" Height="50" Margin="0 0 20 10">
+                <TextBlock Text="Atendente" Height="20"/>
+                <ComboBox Height="30"
+                          ItemsSource="{Binding Controller.FuncionariosCadastrados}" DisplayMemberPath="Usuario"
+                          SelectedIndex="{Binding Controller.AtendenteIndex}"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Width="200" Height="50" Margin="0 0 20 10">
+                <TextBlock Text="Cliente" Height="20"/>
+                <ComboBox Height="30"
+                          ItemsSource="{Binding Controller.ClientesCadastrados}" DisplayMemberPath="NomeCompleto"
+                          SelectedIndex="{Binding Controller.ClienteIndex}"
+                          Name="cmbClientesCadastrados" SelectionChanged="cmbClientesCadastrados_SelectionChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="200" Height="50" Margin="0 0 20 10">
+                <TextBlock Text="Animal" Height="20"/>
+                <ComboBox Name="cmbAnimais" Height="30"
+                          SelectedIndex="{Binding Controller.AnimalIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="200" Height="50" Margin="0 0 20 10">
+                <TextBlock Text="Serviços" Height="20"/>
+                <ComboBox Height="30"
+                          ItemsSource="{Binding Controller.ServicosCadastrados}" DisplayMemberPath="Descricao"
+                          SelectedIndex="{Binding Controller.ServicoIndex}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="200" Height="50" Margin="0 0 20 10">
+                <TextBlock Text="Funcionário Responsável" Height="20"/>
+                <ComboBox Height="30" 
+                          ItemsSource="{Binding Controller.FuncionariosCadastrados}" DisplayMemberPath="Usuario"
+                          SelectedIndex="{Binding Controller.ResponsavelIndex}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Data Inicio Serviço" Height="20"/>
+                <DatePicker Height="30"
+                            SelectedDate="{Binding Controller.Servico.DataInicio}"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Hora Inicio Serviço" Height="20"/>
+                <TextBox Height="30" Name="txtHoraInicio" PreviewTextInput="txtHoraInicio_PreviewTextInput" FontSize="16" MaxLength="5"
+                         Text="{Binding Controller.Servico.HoraInicio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Data Fim Serviço" Height="20"/>
+                <DatePicker Height="30" Text="{Binding Controller.Servico.DataFim, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Hora Fim Serviço" Height="20"/>
+                <TextBox Height="30" Name="txtHoraFim" PreviewTextInput="txtHoraFim_PreviewTextInput" FontSize="16" MaxLength="5"
+                         Text="{Binding Controller.Servico.HoraFim, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="100" Height="50" Margin="0 0 40 10">
+                <TextBlock Text="Status Serviço" Height="20"/>
+                <ToggleButton x:Name="tgbAbertoConcluido" Height="30" Content="Aberto" 
+                              Checked="tgbAbertoConcluido_Checked" Unchecked="tgbAbertoConcluido_Checked"
+                              IsChecked="{Binding Controller.Servico.Status}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Height="200">
+                <TextBlock Text="Observações" Height="20"/>
+                <RichTextBox x:Name="rtxbObservacoes" Height="140">
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0"/>
+                            <Setter Property="FontSize" Value="16"/>
+                        </Style>
+                    </RichTextBox.Resources>
+                    <FlowDocument/>
+                </RichTextBox>
+                
+                <StackPanel Orientation="Horizontal" Height="50" Margin="0 0 0 5">
+                    <ToggleButton x:Name="btnForeground" IsChecked="false" Checked="btnForeground_Checked" Unchecked="btnForeground_Checked" 
+                                  Height="40" Width="100" Content="Importante!" Foreground="Red"/>
+                </StackPanel>
+            </StackPanel>
+        </WrapPanel>
+
+        <Button Grid.Row="4" Grid.Column="1" Content="Salvar" Width="100" HorizontalAlignment="Right" 
+                Name="btnSalvar" Click="btnSalvar_Click"/>
+    </Grid>
+</Window>

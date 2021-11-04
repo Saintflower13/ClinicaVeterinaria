@@ -1,0 +1,96 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.VendaDetalhesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Button Content="Imprimir" Width="100" Margin="0 0 10 0"/>
+                <Button Content="Cancelar" Width="100" Margin="0 0 10 0"/>
+            </StackPanel>
+
+            <GroupBox Grid.Row="1" Header="Informações Gerais" FontSize="16"  
+                      Height="110" Margin="0 10" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" Margin="5 10 5 0">
+                    <StackPanel Orientation="Vertical" Width="130">
+                        <TextBlock Text="Data da Venda" Height="20"/>
+                        <TextBlock Text="20/10/2021"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="130">
+                        <TextBlock Text="Total da Venda" Height="20"/>
+                        <TextBlock Text="100,00"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="200">
+                        <TextBlock Text="Responsável pela Venda"/>
+                        <TextBlock Text="Nome Funcionário" Height="50" TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="265">
+                        <TextBlock Text="Cliente" Height="20"/>
+                        <TextBlock Text="Nome Sobrenome" Height="50" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Grid.Column="0" Header="Detalhes dos Produtos" FontSize="16"  Margin="0 0 5 0">
+                    <ListView Margin="5">
+                        <ListViewItem Content="Teste"/>
+                        <ListViewItem Content="Teste"/>
+                        <ListViewItem Content="Teste"/>
+                        <ListViewItem Content="Teste"/>
+                        <ListViewItem Content="Teste"/>
+                        <ListViewItem Content="Teste"/>
+                    </ListView>
+                </GroupBox>
+
+                <GroupBox Grid.Column="1" Header="Detalhes de Pagamento" FontSize="16" Margin="5 0 0 0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <ListView Grid.Row="0" Margin="5">
+                            <ListViewItem Content="Teste"/>
+                            <ListViewItem Content="Teste"/>
+                        </ListView>
+
+                        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5">
+                            <TextBlock Text="Observações" Height="20"/>
+                            <TextBlock Text="Sem Observações" VerticalAlignment="Stretch"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,78 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.AnimalCadastroView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="txtNomeAnimal" Text="Novo Animal" FontSize="16"/>
+
+        <WrapPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Width="280" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Cliente" Height="20"/>
+                <ComboBox Height="30"
+                          ItemsSource="{Binding Controller.ClientesCadastrados}" DisplayMemberPath="NomeCompleto"
+                          SelectedIndex="{Binding Controller.ClienteSelecionadoIndex}"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Width="250" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Nome" Height="20"/>
+                <TextBox Height="30"
+                         Text="{Binding Controller.Animal.Nome}" MaxLength="45"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="180" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Espécie" Height="20"/>
+                <ComboBox Height="30"
+                          ItemsSource="{Binding Controller.EspeciesCadastradas}" DisplayMemberPath="Descricao"
+                          SelectedIndex="{Binding Controller.EspecieSelecionadaIndex}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="180" Height="50" Margin="0 0 10 10">
+                <GroupBox Header="Sexo" Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton GroupName="sexo" Width="75" VerticalContentAlignment="Center" Content = "Fêmea" Name="rbFemea"/>
+                        <RadioButton GroupName="sexo" Width="75" VerticalContentAlignment="Center" Content = "Macho" Name="rbMacho"
+                                     IsChecked="{Binding Controller.Animal.Sexo}"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="180" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Nascimento" Height="20"/>
+                <DatePicker Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="185" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Pelagem" Height="20"/>
+                <TextBox Height="30"
+                         Text="{Binding Controller.Animal.Pelagem}" MaxLength="45"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="100" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Status" Height="20"/>
+                <ToggleButton Height="30" Name="tgbStatus" 
+                              IsChecked="{Binding Controller.Animal.Status}"
+                              Checked="tgbStatus_Check" Unchecked="tgbStatus_Check"/>
+            </StackPanel>
+        </WrapPanel>
+
+        <Button Grid.Row="4" Grid.Column="1" Name="btnSalvar" Content="Salvar" Width="150" HorizontalAlignment="Right" Click="btnSalvar_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿ClinicaVeterinaria
+
+
+winexe
+C#
+.cs
+D:\IFSP\4o. Sem\EXAPE 2021-2\ClinicaVeterinaria\ClinicaVeterinaria\obj\Debug\net5.0-windows\
+ClinicaVeterinaria
+none
+false
+TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+D:\IFSP\4o. Sem\EXAPE 2021-2\ClinicaVeterinaria\ClinicaVeterinaria\App.xaml
+2911042770
+2-79077735
+77716679606
+2141022217363
+UserControls\ControlCadastroBasico.xaml;UserControls\ControlLabeledTextBox.xaml;Views\AnimaisEspeciesCadastroView.xaml;Views\AnimalCadastroView.xaml;Views\CategoriasProdutosCadastroView.xaml;Views\ClienteCadastroView.xaml;Views\ClienteExpandidoView.xaml;Views\ClientesListar.xaml;Views\CompraCadastrarView.xaml;Views\CompraDetalhesView.xaml;Views\ComprasListarView.xaml;Views\FormasPagamentoCadastroView.xaml;Views\FornecedorCadastroView.xaml;Views\FornecedoresListarView.xaml;Views\FuncionarioCadastroView.xaml;Views\FuncionariosFuncoesCadastroView.xaml;Views\FuncionariosListarView.xaml;Views\LoginView.xaml;Views\ProdutoCadastrarView.xaml;Views\ProdutosListarView.xaml;Views\ServicoCadastroView.xaml;Views\ServicoDetalhesView.xaml;Views\ServicosListarView.xaml;Views\SplashScreenView.xaml;Views\TelaPrincipal.xaml;Views\UnidadeMedidaCadastroView.xaml;Views\VendaCadastrarView.xaml;Views\VendaDetalhesView.xaml;Views\VendasListarView.xaml;
+
+False
+

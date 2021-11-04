@@ -1,0 +1,85 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.ServicoDetalhesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="650" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Name="txtClienteEAnimal" FontSize="16" Margin="0 10 0 0"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="{Binding Controller.ServicoDetalhado.ServicoCategoria}" FontSize="16" Margin="0 10 0 0" Width="680"/>
+                </StackPanel>
+            </Grid>
+
+            <GroupBox Grid.Row="1" Header="Informações Gerais" FontSize="16" Height="180" Margin="0 10" VerticalAlignment="Top">
+                <WrapPanel Orientation="Horizontal" Margin="5 10 5 0">
+                    <StackPanel Orientation="Vertical" Width="190">
+                        <TextBlock Text="Data Agendada" Height="20"/>
+                        <TextBlock x:Name="txtDataInicio" Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="280" Margin="0 0 10 0">
+                        <TextBlock Text="Serviço Realizado Por"/>
+                        <TextBlock Text="{Binding Controller.ServicoDetalhado.FuncionarioNome}" Height="50" TextWrapping="Wrap" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="100" Margin="0 0 20 0">
+                        <TextBlock Text="Status Serviço" Height="20"/>
+                        <TextBlock Text="{Binding Controller.ServicoDetalhado.Status}" Height="50" TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="150" Margin="0 0 50 0" Name="gridMarcarConcluido">
+                        <TextBlock Text="Marcar como Concluído" Height="20" FontSize="14"/>
+                        <Button Content="Concluir Serviço" Name="btnConcluirServico" Click="btnConcluirServico_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="160">
+                        <TextBlock Text="Total do Serviço" Height="20"/>
+                        <TextBlock Text="{Binding Controller.ServicoDetalhado.ServicoDetalhado.Valor}" Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="190">
+                        <TextBlock Text="Serviço Registrado em" Height="20"/>
+                        <TextBlock Name="txtDataRegistro"  Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Width="190">
+                        <TextBlock Text="Serviço Finalizado em" Height="20"/>
+                        <TextBlock x:Name="txtDataFim" Height="30"/>
+                    </StackPanel>
+                </WrapPanel>
+            </GroupBox>
+
+            <StackPanel Grid.Row="2" Margin="5 0 0 0" Orientation="Vertical">
+                <TextBlock Text="Observações" Height="20" Margin="0 0 0 20"/>
+                <TextBlock x:Name="txtObservacoes" Height="280"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

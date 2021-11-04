@@ -1,0 +1,67 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.VendasListarView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="786" Width="1360" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Width="150" Margin="0 0 10 0">
+                <TextBlock Text="Data Início" Height="20"/>
+                <DatePicker Height="30" IsTodayHighlighted="True" />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Margin="0 0 10 0">
+                <TextBlock Text="Data Fim" Height="20"/>
+                <DatePicker Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Margin="0 0 10 0">
+                <TextBlock Text="Cliente" Height="20"  Margin="0 0 10 0"/>
+                <ComboBox SelectedIndex="0" Height="30">
+                    <ComboBoxItem Content="Não Selecionado"/>
+                    <ComboBoxItem Content="Cliente 1"/>
+                </ComboBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Width="150" Margin="0 0 10 0">
+                <TextBlock Text="Funcionário Responsável" Height="20"/>
+                <ComboBox SelectedIndex="0" Height="30">
+                    <ComboBoxItem Content="Não Selecionado"/>
+                    <ComboBoxItem Content="Funcionário 1"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Right">
+            <TextBlock Text="Total em Vendas:"/>
+            <TextBlock Text="0,00"/>
+        </StackPanel>
+
+        <ListView Grid.Row="4" Grid.Column="1">
+            <ListViewItem FontSize="20" Content="Testes" MouseDoubleClick="ListViewItem_MouseDoubleClick"/>
+            <ListViewItem FontSize="20" Content="Testes" MouseDoubleClick="ListViewItem_MouseDoubleClick"/>
+            <ListViewItem FontSize="20" Content="Testes" MouseDoubleClick="ListViewItem_MouseDoubleClick"/>
+            <ListViewItem FontSize="20" Content="Testes" MouseDoubleClick="ListViewItem_MouseDoubleClick"/>
+            <ListViewItem FontSize="20" Content="Testes" MouseDoubleClick="ListViewItem_MouseDoubleClick"/>
+            <ListViewItem FontSize="20" Content="Testes" MouseDoubleClick="ListViewItem_MouseDoubleClick"/>
+            <ListViewItem FontSize="20" Content="Testes" MouseDoubleClick="ListViewItem_MouseDoubleClick"/>
+        </ListView>    
+    </Grid>
+</Window>

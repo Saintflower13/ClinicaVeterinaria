@@ -1,0 +1,69 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.FuncionarioCadastroView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        xmlns:uc="clr-namespace:ClinicaVeterinaria.UserControls"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1"
+                   Text="Cadastro de Funcionário"/>
+        <WrapPanel Grid.Row="3" Grid.Column="1">
+            <StackPanel Orientation="Vertical" Width="400" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Nome Completo*" Height="20"/>
+                <TextBox Name="txbNomeCompleto" MaxLength="69" Height="30"
+                         Text="{Binding Controller.Funcionario.NomeCompleto, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="230" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Função*" Height="20"/>
+                <ComboBox Name="cmbFuncoes" Height="30" 
+                          SelectedIndex="{Binding Controller.Funcionario.FuncaoId}" 
+                          ItemsSource="{Binding Controller.FuncoesDisponiveis}" DisplayMemberPath="Descricao">
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Tipo Acesso*" Height="20"/>
+                <ToggleButton x:Name="tglOperadorAdmin" Content="Operador" Height="30"
+                              IsChecked="{Binding Controller.Funcionario.Tipo, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                              Checked="tglOperadorAdmin_Checked" Unchecked="tglOperadorAdmin_Checked"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Usuário*" Height="20"/>
+                <TextBox x:Name="txbUsuario" Text="{Binding Controller.Funcionario.Usuario, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="29" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Senha*" Height="20" Name="txtSenha" 
+                           Tag="{Binding Controller.Funcionario.Senha, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <PasswordBox MaxLength="15" Height="30" FontSize="16" Name="pswSenha" KeyUp="pswSenha_KeyUp"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Data Contratação*" Height="20"/>
+                <DatePicker Name="dtpDataContratacao" Height="30"
+                            SelectedDate="{Binding Controller.Funcionario.DataCadastro, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </StackPanel>
+        </WrapPanel>
+
+        <Button Grid.Row="4" Grid.Column="1" Name="btnSalvar" Content="Salvar" Width="150" HorizontalAlignment="Right" Click="btnSalvar_Click"/>
+    </Grid>
+</Window>

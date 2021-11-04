@@ -1,0 +1,65 @@
+﻿<Window x:Class="ClinicaVeterinaria.TelaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="786" Width="1360" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+              FontSize="16" Height="40">
+            <Image Source="D:/IFSP/4o. Sem/EXAPE 2021-2/ClinicaVeterinaria/ClinicaVeterinaria/Resources/Images/logo2.png" />
+            <MenuItem Header="Clientes" Height="40">
+                <MenuItem Name="mniCadastrarCliente" Header="Novo Cliente" Click="mniCadastrarCliente_Click"/>
+                <MenuItem Name="mniListarClientes" Header="Listar Clientes" Click="mniListarClientes_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Animais">
+                <MenuItem Name="mniAnimalCadastro" Header="Cadastrar Animal" Click="mniAnimalCadastro_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Serviços">
+                <MenuItem Name="mniServicoCadastrar" Header="Iniciar Serviço" Click="mniServicoCadastrar_Click"/>
+                <MenuItem Name="mniServicosListar" Header="Listar Serviços" Click="mniServicosListar_Click"/>
+            </MenuItem>
+            
+            <MenuItem Header="Vendas">
+                <MenuItem Name="mniVendaCadastrar" Header="Iniciar Venda" Click="mniVendaCadastrar_Click"/>
+                <MenuItem Name="mniVendasListar" Header="Listar Vendas" Click="mniVendasListar_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Compras" Name="mniCompras">
+                <MenuItem Name="mniCompraCadastrar" Header="Registrar Compra" Click="mniCompraCadastrar_Click"/>
+                <MenuItem Name="mniComprasListar" Header="Listar Compras" Click="mniComprasListar_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Cadastros" Name="mniCadastros">
+                <MenuItem Header="Produtos">
+                    <MenuItem Name="mniProdutoCadastrar"  Header="Cadastrar Produto" Click="mniProdutoCadastrar_Click"/>
+                    <MenuItem Name="mniProdutosListar" Header="Listar Produtos" Click="mniProdutosListar_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Fornecedores">
+                    <MenuItem Name="mniFornecedorCadastrar" Header="Cadastrar Fornecedor" Click="mniFornecedorCadastrar_Click"/>
+                    <MenuItem Name="mniFornecedoresListar" Header="Listar Fornecedores" Click="mniFornecedoresListar_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Funcionários">
+                    <MenuItem Name="mniFuncionarioCadastrar" Header="Cadastrar Funcionário" Click="mniFuncionarioCadastrar_Click"/>
+                    <MenuItem Name="mniFuncionariosListar" Header="Listar Funcionários" Click="mniFuncionariosListar_Click"/>
+                    <Separator/>
+                    <MenuItem Name="mniFuncionariosFuncoes" Header="Gerenciar Funções" Click="mniFuncionariosFuncoes_Click"/>
+                </MenuItem>
+
+                <Separator/>
+
+                <MenuItem Name="mniEspeciesAnimaisCadastro" Header="Cadastrar Espécies Animais" Click="mniEspeciesAnimaisCadastro_Click"/>
+                <MenuItem Name="mniFormasPagamentoCadastro" Header="Cadastrar Formas de Pagamento" Click="mniFormasPagamentoCadastro_Click"/>
+                <MenuItem Name="mniUnidadeMedidaCadastro" Header="Cadastrar Unidade de Medida" Click="mniUnidadeMedidaCadastro_Click"/>
+                <MenuItem Name="mniCategoriasProdutosCadastro" Header="Cadastrar Categoria de Produtos" Click="mniCategoriasProdutosCadastro_Click"/>
+                <MenuItem Name="mniCategoriasServicosCadastro" Header="Cadastrar Categoria de Serviços" Click="mniCategoriasServicosCadastro_Click"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

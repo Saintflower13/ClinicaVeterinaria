@@ -1,0 +1,122 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.FornecedorCadastroView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Novo Fornecedor" FontSize="16"/>
+
+        <WrapPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Width="350" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Razao Social*" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.RazaoSocial, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="79" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="350" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Nome Fantasia"  Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.NomeFantasia, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="79" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="CNPJ*" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.CNPJ, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="13" Height="30" 
+                         PreviewTextInput="TextBox_PreviewTextInput"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="150" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Inscrição Estadual" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.InscricaoEstadual, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="12" Height="30"
+                         PreviewTextInput="TextBox_PreviewTextInput"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="100" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Telefone*" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.Telefone, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="12" Height="30"
+                         PreviewTextInput="TextBox_PreviewTextInput"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="300" Margin="0 0 10 10">
+                <TextBlock Text="Email"/>
+                <TextBox Text="{Binding Controller.Fornecedor.Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="99" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="400" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Logradouro" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.EndLogradouro, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="45" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="100" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Numero" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.EndNumero, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="10" Height="30"
+                         PreviewTextInput="TextBox_PreviewTextInput"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="200" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Bairro" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.EndBairro, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="45" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="250" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Cidade" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.EndCidade, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="45" Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"  Width="100" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="CEP" Height="20"/>
+                <TextBox Text="{Binding Controller.Fornecedor.EndCEP, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MaxLength="8" Height="30"
+                         PreviewTextInput="TextBox_PreviewTextInput"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="100" Height="50" Margin="0 0 10 10">
+                <TextBlock Text="Estado" Height="20"/>
+                <ComboBox SelectedIndex="{Binding Controller.Fornecedor.EndEstadoId, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="30">
+                    <ComboBoxItem Tag="0" Content="AC"/>
+                    <ComboBoxItem Tag="1" Content="AL"/>
+                    <ComboBoxItem Tag="2" Content="AP"/>
+                    <ComboBoxItem Tag="3" Content="AM"/>
+                    <ComboBoxItem Tag="4" Content="BA"/>
+                    <ComboBoxItem Tag="5" Content="CE"/>
+                    <ComboBoxItem Tag="6" Content="ES"/>
+                    <ComboBoxItem Tag="7" Content="GO"/>
+                    <ComboBoxItem Tag="8" Content="MA"/>
+                    <ComboBoxItem Tag="9" Content="MT"/>
+                    <ComboBoxItem Tag="10" Content="MS"/>
+                    <ComboBoxItem Tag="11" Content="MG"/>
+                    <ComboBoxItem Tag="12" Content="PA"/>
+                    <ComboBoxItem Tag="13" Content="PB"/>
+                    <ComboBoxItem Tag="14" Content="PR"/>
+                    <ComboBoxItem Tag="15" Content="PE"/>
+                    <ComboBoxItem Tag="16" Content="PI"/>
+                    <ComboBoxItem Tag="17" Content="RR"/>
+                    <ComboBoxItem Tag="18" Content="RO"/>
+                    <ComboBoxItem Tag="19" Content="RJ"/>
+                    <ComboBoxItem Tag="20" Content="RN"/>
+                    <ComboBoxItem Tag="21" Content="RS"/>
+                    <ComboBoxItem Tag="22" Content="SC"/>
+                    <ComboBoxItem Tag="23" Content="SP"/>
+                    <ComboBoxItem Tag="24" Content="SE"/>
+                    <ComboBoxItem Tag="25" Content="TO"/>
+                </ComboBox>
+            </StackPanel>
+        </WrapPanel>
+
+        <Button Grid.Row="4" Grid.Column="1" Name="btnSalvar" Content="Salvar" Width="150" Click="btnSalvar_Click" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>

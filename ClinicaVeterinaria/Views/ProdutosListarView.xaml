@@ -1,0 +1,49 @@
+﻿<Window x:Class="ClinicaVeterinaria.Views.ProdutosListarView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
+        mc:Ignorable="d"
+        Title="Clínica Veterinária Felinos da Montanha" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock Text="Informe o Produto a pesquisar:" Height="20"/>
+            <StackPanel Orientation="Horizontal" Height="30">
+                <TextBox x:Name="txbProdutoPesquisar" Width="480" Margin="0 0 10 0" KeyDown="txbProdutoPesquisar_KeyDown"/>
+                <Button Width="80" Content="Pesquisar" Margin="0 0 10 0" Name="btnPesquisarProduto" Click="btnPesquisarProduto_Click"/>
+                <Button Width="140" Content="Cadastrar Produto" Name="btnCadastrarProduto" Click="btnCadastrarProduto_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <ListView Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Controller.ProdutosCadastrados}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Descricao}" Header="Descrição" Width="325"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Valor}" Header="Valor"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding UnMedida}" Header="Un. Medida" Width="100"/>
+                </GridView>
+            </ListView.View>
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseDoubleClick" Handler="ListViewItem_MouseDoubleClick" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Window>
