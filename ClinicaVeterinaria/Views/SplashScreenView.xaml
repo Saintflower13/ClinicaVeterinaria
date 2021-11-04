@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
         mc:Ignorable="d"
-        Title="Clínica Veterinária Felinos da Montanha" Height="150" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Clínica Veterinária Felinos da Montanha" Height="150" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Views/logo2.png">
     <Grid>
-        <TextBlock Text="Clínica Veterinária Felinos da Montanha" Margin="20"/>
-        <TextBlock Text="Iniciando Sistema..." Margin="10" FontSize="14" VerticalAlignment="Bottom" Height="55" HorizontalAlignment="Center"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="229*"/>
+            <ColumnDefinition Width="171*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Clínica Veterinária Felinos da Montanha" Margin="20,20,20,20" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Iniciando Sistema..." Margin="141,0,0,10" FontSize="14" VerticalAlignment="Bottom" Height="55" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
 
-        <ProgressBar x:Name="progressBar" Height="20" Margin="20" Foreground="CornflowerBlue" VerticalAlignment="Bottom"/>
-        <TextBlock HorizontalAlignment="Center" Margin="20"
+        <ProgressBar x:Name="progressBar" Height="20" Margin="20,0,20,20" Foreground="CornflowerBlue" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="200,0,0,20"
                    VerticalAlignment="Bottom" Name="txt" Foreground="Black"/>
     </Grid>
 </Window>

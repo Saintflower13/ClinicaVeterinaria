@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClinicaVeterinaria"
         mc:Ignorable="d"
-        Title="Clínica Veterinária Felinos da Montanha" Height="786" Width="1360" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Clínica Veterinária Felinos da Montanha" Height="786" Width="1360" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/Views/logo2.png">
     <Grid>
         <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" 
               FontSize="16" Height="40">
-            <Image Source="D:/IFSP/4o. Sem/EXAPE 2021-2/ClinicaVeterinaria/ClinicaVeterinaria/Resources/Images/logo2.png" />
+            <Image Source="/Views/logo2.png" />
             <MenuItem Header="Clientes" Height="40">
                 <MenuItem Name="mniCadastrarCliente" Header="Novo Cliente" Click="mniCadastrarCliente_Click"/>
                 <MenuItem Name="mniListarClientes" Header="Listar Clientes" Click="mniListarClientes_Click"/>

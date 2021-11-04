@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClinicaVeterinaria.Views"
         mc:Ignorable="d"
-        Title="Clínica Veterinária Felinos da Montanha" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Clínica Veterinária Felinos da Montanha" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Views/logo2.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
